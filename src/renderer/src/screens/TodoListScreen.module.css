@@ -1,0 +1,20 @@
+.todoCard {
+  transition: all 130ms cubic-bezier(0.45, 0, 0, 1);
+
+  &:hover {
+    transition-timing-function: cubic-bezier(0.45, 0, 0.40, 1);
+    background-color: var(--mantine-color-default-hover);
+  }
+}
+
+/* .todoCardRemove {
+  visibility: hidden;
+  opacity: 0;
+
+  :where(.todoCard:hover) & {
+    transition: all 100ms cubic-bezier(0.45, 0, 0, 1);
+    transition-delay: 150ms;
+    visibility: visible;
+    opacity: 1;
+  }
+} */
