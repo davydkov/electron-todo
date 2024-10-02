@@ -1,53 +1,58 @@
-# electron-todo
+# Electron Todo App
 
-An Electron TO-DO Application with React, TypeScript.
-For Collaboration utilizes yjs, keeps local changes in IndexedDB and use y-websocket server for synchronization  with others.
+An Electron-based TO-DO application built with React and TypeScript. The app leverages **Yjs** for real-time collaboration, with local changes stored in **IndexedDB**, and a **y-websocket** server for synchronization with other users.
 
-**Data**
+## Features
 
-- [src/renderer/src/data/user.ts](src/renderer/src/data/user.ts)  
-  Single shared yjs document, keeps track of users, to-do lists and "sharings"
+- **Real-Time Collaboration**: Synchronize to-do lists and user data across multiple instances.
+- **Offline Support**: Local changes are persisted in IndexedDB.
+- **Synchronization**: Server-side synchronization via y-websocket ensures updates are shared between users even when local synchronization fails due to IndexedDB locks.
 
-- [src/renderer/src/data/todos.ts](src/renderer/src/data/todos.ts)  
-  Represents each todo list, yjs document with items and their states
+## Data Structure
 
-**Screens**
+- **[src/renderer/src/data/user.ts](src/renderer/src/data/user.ts)**
+  A shared Yjs document that tracks users, their to-do lists, and sharing information between users.
 
-- Select Account or Create a new one:
-  <img width="1022" alt="SCR-20241002-lqhq" src="https://github.com/user-attachments/assets/b2df42e0-ed86-4414-a70f-85f1a746e0c4">
+- **[src/renderer/src/data/todos.ts](src/renderer/src/data/todos.ts)**
+  Represents each to-do list as a Yjs document, containing individual items and their states.
 
-- Create new list or Join to existing:
-  <img width="1012" alt="SCR-20241002-lvxs" src="https://github.com/user-attachments/assets/562b1c46-df31-4dda-8cfd-9e6d7c607500">
+## Screenshots
 
-- Workspace:
-  <img width="1022" alt="SCR-20241002-lrcf" src="https://github.com/user-attachments/assets/c1ee710f-1d37-42b8-ab3f-11efa4b3cd46">
+- **Select or Create an Account**:
+  ![Account Selection](https://github.com/user-attachments/assets/b2df42e0-ed86-4414-a70f-85f1a746e0c4)
+
+- **Create or Join a To-Do List**:
+  ![Create or Join List](https://github.com/user-attachments/assets/562b1c46-df31-4dda-8cfd-9e6d7c607500)
+
+- **Workspace**:
+  ![Workspace](https://github.com/user-attachments/assets/c1ee710f-1d37-42b8-ab3f-11efa4b3cd46)
 
 
 > [!NOTE]
-> It is possible to start mutlitple instances from terminal via
+> You can run multiple instances of the app from the terminal with:
+> ```bash
+> pnpm start
 > ```
-> $ pnpm start
-> ```
-> Instances 2,3 ... will fail with local synchriozation due to locks on IndexedDB
-> but synchronization works with server
->
-> 
-
+> While only one instance can access local synchronization due to IndexedDB locks, synchronization with the server will still function across all instances.
 
 ## Project Setup
 
-### Install
+### Installation
+
+To install dependencies, run:
 
 ```bash
-$ pnpm install
+pnpm install
 ```
 
 ### Development
 
-```bash
-# Electron app
-$ pnpm dev
+To start the Electron app and server for development, use:
 
-# Server
-$ pnpm start:server
+```bash
+# Start the Electron app
+pnpm dev
+
+# Start the WebSocket server
+pnpm start:server
 ```

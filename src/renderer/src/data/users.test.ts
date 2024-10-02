@@ -5,37 +5,37 @@ import { useUsers } from './user'
 
 // src/renderer/src/data/user.test.ts
 
-// Mock dependencies
-vi.mock('@syncedstore/core', () => ({
-  syncedStore: vi.fn(() => ({
-    users: {},
-    lists: []
-  })),
-  getYjsDoc: vi.fn()
-}))
-vi.mock('@syncedstore/react', () => ({
-  useSyncedStore: vi.fn((store) => store)
-}))
-vi.mock('nanoid', () => ({
-  nanoid: vi.fn(() => 'abcd')
-}))
-vi.mock('nanostores', () => ({
-  atom: vi.fn(() => ({
-    get: vi.fn(),
-    set: vi.fn()
-  })),
-  onMount: vi.fn()
-}))
-vi.mock('remeda', () => ({
-  values: vi.fn((obj) => Object.values(obj)),
-  isTruthy: vi.fn(
-    (val) => !!val)
-}))
-vi.mock('tiny-invariant', () => ({
-  default: vi.fn((condition, message) => {
-    if (!condition) throw new Error(message)
-  })
-}))
+// // Mock dependencies
+// vi.mock('@syncedstore/core', () => ({
+//   syncedStore: vi.fn(() => ({
+//     users: {},
+//     lists: []
+//   })),
+//   getYjsDoc: vi.fn()
+// }))
+// vi.mock('@syncedstore/react', () => ({
+//   useSyncedStore: vi.fn((store) => store)
+// }))
+// vi.mock('nanoid', () => ({
+//   nanoid: vi.fn(() => 'abcd')
+// }))
+// vi.mock('nanostores', () => ({
+//   atom: vi.fn(() => ({
+//     get: vi.fn(),
+//     set: vi.fn()
+//   })),
+//   onMount: vi.fn()
+// }))
+// vi.mock('remeda', () => ({
+//   values: vi.fn((obj) => Object.values(obj)),
+//   isTruthy: vi.fn(
+//     (val) => !!val)
+// }))
+// vi.mock('tiny-invariant', () => ({
+//   default: vi.fn((condition, message) => {
+//     if (!condition) throw new Error(message)
+//   })
+// }))
 
 describe('useUsers', () => {
   let store: any
