@@ -10,10 +10,10 @@ An Electron-based TO-DO application built with React and TypeScript. The app lev
 
 ## Data Structure
 
-- **[src/renderer/src/data/user.ts](src/renderer/src/data/user.ts)**
+- **[src/renderer/src/data/user.ts](src/renderer/src/data/user.ts)**  
   A shared Yjs document that tracks users, their to-do lists, and sharing information between users.
 
-- **[src/renderer/src/data/todos.ts](src/renderer/src/data/todos.ts)**
+- **[src/renderer/src/data/todos.ts](src/renderer/src/data/todos.ts)**  
   Represents each to-do list as a Yjs document, containing individual items and their states.
 
 ## Screenshots
